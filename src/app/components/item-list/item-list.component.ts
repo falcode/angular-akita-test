@@ -10,6 +10,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./item-list.component.scss']
 })
 export class ItemListComponent implements OnInit {
+  public itemsToSee = 5;
   public items: Item[] = [];
   public favItems: Item[] = [];
   private destroySubject$: Subject<void> = new Subject();
@@ -48,4 +49,5 @@ export class ItemListComponent implements OnInit {
    */
   getFav = (itemID: number) => this.favItems.find(item => item.id === itemID);
 
+  sortByPropertie = (key: string) => this.items.sort((a, b) => a[key] > b[key] ? 1 : -1);
 }
