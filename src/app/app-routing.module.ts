@@ -10,10 +10,6 @@ export const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import ('@home/home.module').then(load => load.HomeModule)
-  },
-  {
-    path: '**',
-    redirectTo: 'home'
   }
 ];
 
