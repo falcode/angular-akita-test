@@ -1,0 +1,572 @@
+// Here will go all h- prefixed classes
+
+/**
+ * @atom Margin helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-mb-15">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ *
+ *  <div class="h-mb-15">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+// Media query agnostic
+.h-mb-0 {
+  margin-bottom: rem(0px) !important;
+}
+
+.h-mb-5 {
+  margin-bottom: rem(5px) !important;
+}
+
+.h-mb-15 {
+  margin-bottom: rem(15px) !important;
+}
+
+.h-mb-30 {
+  margin-bottom: rem(30px) !important;
+}
+
+.h-mb-40 {
+  margin-bottom: rem(40px) !important;
+}
+
+.h-mb-50 {
+  margin-bottom: rem(50px) !important;
+}
+
+.h-mb-60 {
+  margin-bottom: rem(60px) !important;
+}
+
+.h-mt-0 {
+  margin-top: rem(0px) !important;
+}
+
+.h-mt-5 {
+  margin-top: rem(5px) !important;
+}
+
+.h-mt-15 {
+  margin-top: rem(15px) !important;
+}
+
+.h-mt-30 {
+  margin-top: rem(30px) !important;
+}
+
+.h-mt-40 {
+  margin-top: rem(40px) !important;
+}
+
+.h-mt-50 {
+  margin-top: rem(50px) !important;
+}
+
+.h-mt-60 {
+  margin-top: rem(60px) !important;
+}
+
+.h-ml-0 {
+  margin-left: rem(0px) !important;
+}
+
+.h-ml-5 {
+  margin-left: rem(5px) !important;
+}
+
+.h-ml-15 {
+  margin-left: rem(15px) !important;
+}
+
+.h-ml-30 {
+  margin-left: rem(30px) !important;
+}
+
+.h-ml-40 {
+  margin-left: rem(40px) !important;
+}
+
+.h-ml-50 {
+  margin-left: rem(50px) !important;
+}
+
+.h-ml-60 {
+  margin-left: rem(60px) !important;
+}
+
+.h-mr-0 {
+  margin-right: rem(0px) !important;
+}
+
+.h-mr-5 {
+  margin-right: rem(5px) !important;
+}
+
+.h-mr-15 {
+  margin-right: rem(15px) !important;
+}
+
+.h-mr-30 {
+  margin-right: rem(30px) !important;
+}
+
+.h-mr-40 {
+  margin-right: rem(40px) !important;
+}
+
+.h-mr-50 {
+  margin-right: rem(50px) !important;
+}
+
+.h-mr-60 {
+  margin-right: rem(60px) !important;
+}
+
+// Tablet
+.h-mb-t-0 {
+  @media #{$mdd} {
+    margin-bottom: rem(0px) !important;
+  }
+}
+
+.h-mb-t-5 {
+  @media #{$mdd} {
+    margin-bottom: rem(5px) !important;
+  }
+}
+
+.h-mb-t-15 {
+  @media #{$mdd} {
+    margin-bottom: rem(15px) !important;
+  }
+}
+
+.h-mb-t-30 {
+  @media #{$mdd} {
+    margin-bottom: rem(30px) !important;
+  }
+}
+
+.h-mb-t-40 {
+  @media #{$mdd} {
+    margin-bottom: rem(40px) !important;
+  }
+}
+
+.h-mb-t-50 {
+  @media #{$mdd} {
+    margin-bottom: rem(50px) !important;
+  }
+}
+
+.h-mb-t-60 {
+  @media #{$mdd} {
+    margin-bottom: rem(60px) !important;
+  }
+}
+
+.h-mt-t-0 {
+  @media #{$mdd} {
+    margin-top: rem(0px) !important;
+  }
+}
+
+.h-mt-t-5 {
+  @media #{$mdd} {
+    margin-top: rem(5px) !important;
+  }
+}
+
+.h-mt-t-15 {
+  @media #{$mdd} {
+    margin-top: rem(15px) !important;
+  }
+}
+
+.h-mt-t-30 {
+  @media #{$mdd} {
+    margin-top: rem(30px) !important;
+  }
+}
+
+.h-mt-t-40 {
+  @media #{$mdd} {
+    margin-top: rem(40px) !important;
+  }
+}
+
+.h-mt-t-50 {
+  @media #{$mdd} {
+    margin-top: rem(50px) !important;
+  }
+}
+
+.h-mt-t-60 {
+  @media #{$mdd} {
+    margin-top: rem(60px) !important;
+  }
+}
+
+.h-ml-t-0 {
+  @media #{$mdd} {
+    margin-left: rem(0px) !important;
+  }
+}
+
+.h-ml-t-5 {
+  @media #{$mdd} {
+    margin-left: rem(5px) !important;
+  }
+}
+
+.h-ml-t-15 {
+  @media #{$mdd} {
+    margin-left: rem(15px) !important;
+  }
+}
+
+.h-ml-t-30 {
+  @media #{$mdd} {
+    margin-left: rem(30px) !important;
+  }
+}
+
+.h-ml-t-40 {
+  @media #{$mdd} {
+    margin-left: rem(40px) !important;
+  }
+}
+
+.h-ml-t-50 {
+  @media #{$mdd} {
+    margin-left: rem(50px) !important;
+  }
+}
+
+.h-ml-t-60 {
+  @media #{$mdd} {
+    margin-left: rem(60px) !important;
+  }
+}
+
+.h-mr-t-0 {
+  @media #{$mdd} {
+    margin-right: rem(0px) !important;
+  }
+}
+
+.h-mr-t-5 {
+  @media #{$mdd} {
+    margin-right: rem(5px) !important;
+  }
+}
+
+.h-mr-t-15 {
+  @media #{$mdd} {
+    margin-right: rem(15px) !important;
+  }
+}
+
+.h-mr-t-30 {
+  @media #{$mdd} {
+    margin-right: rem(30px) !important;
+  }
+}
+
+.h-mr-t-40 {
+  @media #{$mdd} {
+    margin-right: rem(40px) !important;
+  }
+}
+
+.h-mr-t-50 {
+  @media #{$mdd} {
+    margin-right: rem(50px) !important;
+  }
+}
+
+.h-mr-t-60 {
+  @media #{$mdd} {
+    margin-right: rem(60px) !important;
+  }
+}
+
+// Mobile
+.h-mb-m-0 {
+  @media #{$smd} {
+    margin-bottom: rem(0px) !important;
+  }
+}
+
+.h-mb-m-5 {
+  @media #{$smd} {
+    margin-bottom: rem(5px) !important;
+  }
+}
+
+.h-mb-m-15 {
+  @media #{$smd} {
+    margin-bottom: rem(15px) !important;
+  }
+}
+
+.h-mb-m-30 {
+  @media #{$smd} {
+    margin-bottom: rem(30px) !important;
+  }
+}
+
+.h-mb-m-40 {
+  @media #{$smd} {
+    margin-bottom: rem(40px) !important;
+  }
+}
+
+.h-mb-m-50 {
+  @media #{$smd} {
+    margin-bottom: rem(50px) !important;
+  }
+}
+
+.h-mb-m-60 {
+  @media #{$smd} {
+    margin-bottom: rem(60px) !important;
+  }
+}
+
+.h-mt-m-0 {
+  @media #{$smd} {
+    margin-top: rem(0px) !important;
+  }
+}
+
+.h-mt-m-5 {
+  @media #{$smd} {
+    margin-top: rem(5px) !important;
+  }
+}
+
+.h-mt-m-15 {
+  @media #{$smd} {
+    margin-top: rem(15px) !important;
+  }
+}
+
+.h-mt-m-30 {
+  @media #{$smd} {
+    margin-top: rem(30px) !important;
+  }
+}
+
+.h-mt-m-40 {
+  @media #{$smd} {
+    margin-top: rem(40px) !important;
+  }
+}
+
+.h-mt-m-50 {
+  @media #{$smd} {
+    margin-top: rem(50px) !important;
+  }
+}
+
+.h-mt-m-60 {
+  @media #{$smd} {
+    margin-top: rem(60px) !important;
+  }
+}
+
+.h-ml-m-0 {
+  @media #{$smd} {
+    margin-left: rem(0px) !important;
+  }
+}
+
+.h-ml-m-5 {
+  @media #{$smd} {
+    margin-left: rem(5px) !important;
+  }
+}
+
+.h-ml-m-15 {
+  @media #{$smd} {
+    margin-left: rem(15px) !important;
+  }
+}
+
+.h-ml-m-30 {
+  @media #{$smd} {
+    margin-left: rem(30px) !important;
+  }
+}
+
+.h-ml-m-40 {
+  @media #{$smd} {
+    margin-left: rem(40px) !important;
+  }
+}
+
+.h-ml-m-50 {
+  @media #{$smd} {
+    margin-left: rem(50px) !important;
+  }
+}
+
+.h-ml-m-60 {
+  @media #{$smd} {
+    margin-left: rem(60px) !important;
+  }
+}
+
+.h-mr-m-0 {
+  @media #{$smd} {
+    margin-right: rem(0px) !important;
+  }
+}
+
+.h-mr-m-5 {
+  @media #{$smd} {
+    margin-right: rem(5px) !important;
+  }
+}
+
+.h-mr-m-15 {
+  @media #{$smd} {
+    margin-right: rem(15px) !important;
+  }
+}
+
+.h-mr-m-30 {
+  @media #{$smd} {
+    margin-right: rem(30px) !important;
+  }
+}
+
+.h-mr-m-40 {
+  @media #{$smd} {
+    margin-right: rem(40px) !important;
+  }
+}
+
+.h-mr-m-50 {
+  @media #{$smd} {
+    margin-right: rem(50px) !important;
+  }
+}
+
+.h-mr-m-60 {
+  @media #{$smd} {
+    margin-right: rem(60px) !important;
+  }
+}
+
+/**
+ * @atom Pointer helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-pointer-cursor">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-pointer-cursor {
+  cursor: pointer !important;
+}
+
+/**
+ * @atom Text center helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-center">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-center {
+  text-align: center !important;
+}
+
+/**
+ * @atom Text left helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-left">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-left {
+  text-align: left !important;
+}
+
+/**
+ * @atom Text right helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-right">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-right {
+  text-align: left !important;
+}
+
+/**
+ * @atom Text underline helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-underline">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-underline {
+  text-decoration: underline;
+}
+
+/**
+ * @atom Text bold helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-bold">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-bold {
+  font-weight: bold;
+}
+
+/**
+ * @atom Text bolder helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-bolder">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-bolder {
+  font-weight: bolder;
+}
+
+/**
+ * @atom Text light helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-light">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-light {
+  font-weight: lighter;
+}
+
+/**
+ * @atom Text italic helper
+ * @section Helpers
+ * @markup
+ *  <div class="h-text-italic">
+ *    Lorem ipsum dolor sit amet
+ *  </div>
+ */
+.h-text-italic {
+  font-style: italic;
+}

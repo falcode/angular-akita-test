@@ -1,0 +1,9 @@
+<div class="c-item d-flex flex-column" [ngClass]="{'c-item__fav': fav}">
+  <img class="c-item--image" src="{{ item.image }}" />
+  <div>
+    <p class="c-item--price">{{ item.price | currency: "EUR" }}</p>
+    <p class="c-item--title">{{ item.title }}</p>
+    <p class="c-item--email">{{ item.email }}</p>
+    <p class="c-item--description">{{ readMore(item.description) }}</p>
+  </div>
+</div>
