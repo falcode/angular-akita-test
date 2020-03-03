@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemsService } from '@services/items.service';
+import { ItemsService } from '../../core/states/items/items.service';
 import { Item } from '@app/core/interfaces/items';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { ItemsQuery } from '@app/core/states/items/items.query';
 
 @Component({
   selector: 'app-item-list',
@@ -10,44 +11,61 @@ import { Subject } from 'rxjs';
   styleUrls: ['./item-list.component.scss']
 })
 export class ItemListComponent implements OnInit {
-  public itemsToSee = 5;
-  public items: Item[] = [];
-  public favItems: Item[] = [];
+  public itemsToSee: number;
+  items: Item[] = [];
   private destroySubject$: Subject<void> = new Subject();
 
   constructor(
+    public itemsQuery: ItemsQuery,
     private itemsService: ItemsService
   ) { }
 
   ngOnInit() {
-    this.itemsService.getItems().pipe(takeUntil(this.destroySubject$))
-      .subscribe(res => this.items = this.generateID(res.items));
+    this.itemsService.get().pipe(takeUntil(this.destroySubject$)).subscribe(val => this.items = val);
+    this.itemsQuery.sortBy$.pipe().subscribe(
+      value => this.sortByPropertie(value)
+    );
+    this.itemsQuery.searchBy$.pipe().subscribe(
+      value => this.items = this.transform(this.items, value)
+    );
+    this.itemsQuery.itemsToDisplay$.pipe(takeUntil(this.destroySubject$))
+      .subscribe(val => this.itemsToSee = val);
+
   }
 
-  /**
-   * Add an ID to every object on the array
-   * @param Item[] item list
-   */
-  generateID = (items: Item[]): Item[] => items.map((item, i) => ({ id: i++, ...item }));
 
   /**
    * Add or delete items on fav item list
    * @param newItem new item to add or delete
    */
-  addOrDelFavItems(newItem: Item) {
-    const index = this.favItems.indexOf(newItem);
-    if (index > -1) {
-      this.favItems.splice(index, 1);
+  addOrDelFavItems = (newItem: Item) =>
+    this.itemsQuery.getFavItems().find(item => item.id === newItem.id) ?
+      this.itemsService.removeFavItem(newItem) : this.itemsService.addFavItem(newItem)
+
+
+  sortByPropertie = (key: string) => {
+    if (key === 'price') {
+      return this.items.sort((a, b) => a.price - b.price);
     } else {
-      this.favItems.push(newItem);
+      return this.items.sort((a, b) => a[key].localeCompare(b[key]));
     }
   }
 
-  /**
-   * See if item is fav or not
-   * @param itemID item to see if its fav or not
-   */
-  getFav = (itemID: number) => this.favItems.find(item => item.id === itemID);
+  transform(values: Item[], filter: string): Item[] {
+    if (!values || !values.length) { return []; }
+    if (!filter) { return values; }
+    return values.filter(v => {
+        let match = false;
 
-  sortByPropertie = (key: string) => this.items.sort((a, b) => a[key] > b[key] ? 1 : -1);
+        Object.keys(v).forEach(k => {
+            if (typeof v[k] === 'string') {
+                match = match || v[k].indexOf(filter) >= 0;
+            } else {
+                match = match || v[k] === filter; // == intentinally
+            }
+        });
+
+        return match;
+    });
+}
 }

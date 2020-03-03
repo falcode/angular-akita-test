@@ -1,4 +1,6 @@
-<div class="c-item d-flex flex-column" [ngClass]="{'c-item__fav': fav}">
+<div class="c-item d-flex flex-column" 
+*ngIf="item"
+[ngClass]="{'c-item__fav': favItem$ | async}">
   <img class="c-item--image" src="{{ item.image }}" />
   <div>
     <p class="c-item--price">{{ item.price | currency: "EUR" }}</p>

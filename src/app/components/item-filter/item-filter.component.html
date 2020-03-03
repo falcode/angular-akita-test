@@ -1,0 +1,27 @@
+<div class="c-floating-item-filter">
+  <div class="c-item-filter d-flex flex-wrap justify-content-around align-items-center">
+
+    <div class="c-item-filter--option d-flex">
+      <p>Ver más:</p>
+      <div class="c-item-filter--button d-flex">
+        <div class="d-flex justify-content-center align-items-center"
+          (click)="seeMoreItems()">+</div>
+        <div class="d-flex justify-content-center align-items-center"
+          (click)="seeLessItems()">-</div>
+      </div>
+    </div>
+
+    <div class="c-item-filter--option d-flex">
+      <p>Ordenado por:</p>
+      <select ngModel [(ngModel)]="selected" (ngModelChange)="itemsService.updateSortBy($event)">
+        <option [value]="item" *ngFor="let item of itemKeys" [ngValue]="item">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="c-item-filter--option d-flex">
+      <p>Buscar por:</p>
+      <input (keyup)="itemsService.updateSearchBy($event.target.value)" />
+    </div>
+  </div>
+
+</div>

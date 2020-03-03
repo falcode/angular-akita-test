@@ -1,31 +1,11 @@
-.c-item-filter {
-  max-width: 1160px;
-  margin: 20px auto;
-  border-radius: 10px;
-  background-color: white;
-  height: 50px;
-  padding: 0px 20px;
-  &--button {
-    * {
-      margin: 0px 20px;
-      height: 40px;
-      width: 60px;
-      font-size: 35px;
-      color: white;
-      cursor: pointer;
-      background: #15a188;
-      border-radius: 30px;
-
-    }
-  }
-}
-
 .c-item-list {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
+  height: auto;
+
   app-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
-  
+
   }
 }

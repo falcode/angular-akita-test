@@ -1,0 +1,33 @@
+.c-floating-item-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  .c-item-filter {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 10px 0px;
+    border-radius: 0px 0px 10px 10px;    
+    background-color: white;
+    &--button {
+      * {
+        margin: 0px 10px 0px 0px;
+        height: 20px;
+        width: 20px;
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+        background: #15a188;
+        border-radius: 5px;
+
+      }
+    }
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0px 20px 2px 0px;
+    color: #15a188;
+    font-weight: bold;
+  }
+}

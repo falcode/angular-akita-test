@@ -1,25 +1,6 @@
-<div class="c-item-filter d-flex justify-content-between align-items-center">
-  <div class="c-item-filter--button d-flex">
-    <div class="c-item-filter--button-less d-flex justify-content-center align-items-center"
-    (click)="itemsToSee = itemsToSee <= 5 ? itemsToSee : itemsToSee - 5">-</div>
-    <div class="c-item-filter--button-plus d-flex justify-content-center align-items-center" 
-      (click)="itemsToSee = itemsToSee >= items.length ? itemsToSee : itemsToSee + 5">+</div>
+  <div class="c-item-list d-flex flex-wrap justify-content-around">
+    <ng-container *ngFor="let item of items | slice: 0:itemsToSee">
+      <app-item [item]="item" (click)="addOrDelFavItems(item)">
+      </app-item>
+    </ng-container>
   </div>
-  <div>
-    <select name="select">
-      <option value="value1">Value 1</option> 
-      <option value="value2" selected>Value 2</option>
-      <option value="value3">Value 3</option>
-    </select>
-  </div>
-</div>
-
-<div class="c-item-list d-flex flex-wrap justify-content-center">
-  <ng-container *ngFor="let item of items | slice: 0:itemsToSee">
-    <app-item
-      [item]="item"
-      [fav]="getFav(item.id)"
-      (click)="addOrDelFavItems(item)">
-    </app-item>
-  </ng-container>
-</div>
