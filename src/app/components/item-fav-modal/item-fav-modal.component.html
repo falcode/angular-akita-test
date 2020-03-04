@@ -1,0 +1,13 @@
+<p>Busca por título: </p>
+<input class="search-fav-item" (keyup)="searchBy($event.target.value)" />
+<div class="d-flex flex-wrap justify-content-around">
+  <ng-container *ngFor="let item of searchFavItems">
+    <mat-card class="item-card" (click)="this.itemsService.removeFavItem(item)">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{item.title}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{item.image}}">
+    </mat-card>
+  </ng-container>
+</div>
