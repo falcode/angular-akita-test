@@ -17,7 +17,7 @@ export class ItemListComponent implements OnInit {
 
   constructor(
     public itemsQuery: ItemsQuery,
-    private itemsService: ItemsService
+    private itemsService: ItemsService,
   ) { }
 
   ngOnInit() {
@@ -25,14 +25,10 @@ export class ItemListComponent implements OnInit {
     this.itemsQuery.sortBy$.pipe().subscribe(
       value => this.sortByPropertie(value)
     );
-    this.itemsQuery.searchBy$.pipe().subscribe(
-      value => this.items = this.transform(this.items, value)
-    );
     this.itemsQuery.itemsToDisplay$.pipe(takeUntil(this.destroySubject$))
       .subscribe(val => this.itemsToSee = val);
 
   }
-
 
   /**
    * Add or delete items on fav item list
@@ -42,7 +38,6 @@ export class ItemListComponent implements OnInit {
     this.itemsQuery.getFavItems().find(item => item.id === newItem.id) ?
       this.itemsService.removeFavItem(newItem) : this.itemsService.addFavItem(newItem)
 
-
   sortByPropertie = (key: string) => {
     if (key === 'price') {
       return this.items.sort((a, b) => a.price - b.price);
@@ -50,22 +45,4 @@ export class ItemListComponent implements OnInit {
       return this.items.sort((a, b) => a[key].localeCompare(b[key]));
     }
   }
-
-  transform(values: Item[], filter: string): Item[] {
-    if (!values || !values.length) { return []; }
-    if (!filter) { return values; }
-    return values.filter(v => {
-        let match = false;
-
-        Object.keys(v).forEach(k => {
-            if (typeof v[k] === 'string') {
-                match = match || v[k].indexOf(filter) >= 0;
-            } else {
-                match = match || v[k] === filter; // == intentinally
-            }
-        });
-
-        return match;
-    });
-}
 }

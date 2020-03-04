@@ -12,15 +12,19 @@
     </div>
 
     <div class="c-item-filter--option d-flex">
-      <p>Ordenado por:</p>
+      <p>Ordenar
+         por:</p>
       <select ngModel [(ngModel)]="selected" (ngModelChange)="itemsService.updateSortBy($event)">
         <option [value]="item" *ngFor="let item of itemKeys" [ngValue]="item">{{item}}</option>
       </select>
     </div>
 
     <div class="c-item-filter--option d-flex">
-      <p>Buscar por:</p>
-      <input (keyup)="itemsService.updateSearchBy($event.target.value)" />
+      <div class="c-item-filter--option-modal" 
+      [ngClass]="{unclickable : !areFavItems}" 
+      (click)="openDialog()">
+        <p>Ver favoritos</p>
+      </div>
     </div>
   </div>
 

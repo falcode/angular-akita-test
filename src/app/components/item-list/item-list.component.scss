@@ -3,9 +3,12 @@
   margin: 0 auto;
   height: auto;
 
+  app-item {
+    padding: 20px 0px;
+  }
+
   app-item:hover {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
-
   }
 }
